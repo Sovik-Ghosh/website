@@ -36,7 +36,7 @@ export default function Trajectory() {
         num="02"
         kicker="Trajectory"
         title="Every role, a new camera pose."
-        sub="Each position added a viewpoint aerial imagery, autonomous-vehicle perception, factory-floor inspection, and now city-scale sensing."
+        sub="Each position added a viewpoint: aerial imagery, autonomous-vehicle perception, factory-floor inspection, and now city-scale sensing."
       />
 
       <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_420px]">
