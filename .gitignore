@@ -1,2 +1,9 @@
-# Local Netlify folder
 .netlify
+node_modules
+dist
+.env
+.env.*
+!.env.example
+tools/out
+.chrome-tmp
+.preview.log

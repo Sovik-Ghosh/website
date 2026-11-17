@@ -1,77 +1,33 @@
-import React from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { lazy, Suspense, useCallback, useEffect, useState } from "react";
+import Navbar from "./sections/Navbar";
+import Hero from "./sections/Hero";
+import Trajectory from "./sections/Trajectory";
+import { Reconstruct, Toolkit, Foundations } from "./sections/Work";
+import Connect from "./sections/Connect";
+import { startMotionTracking } from "./three/motion";
 
-import styles from "./style";
-import {
-  Navbar,
-  Hero,
-  Education,
-  SkillsAndExperience,
-  ExtraCurricular,
-  Footer,
-  OpenSource,
-  Projects,
-  BlogPosts,
-  Loading,
-  Achievements,
-} from "./components";
+const CloudScene = lazy(() => import("./three/CloudScene"));
 
-const App = () => {
-  const [isLoading, setIsLoading] = React.useState(true);
-
-  React.useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 1200);
-  }, []);
+export default function App() {
+  const [stats, setStats] = useState(null);
+  const onStats = useCallback((s) => setStats(s), []);
+  useEffect(() => startMotionTracking(), []);
 
   return (
-    // A div to wrap the entire application
-    <div className="bg-primary w-full overflow-hidden">
-      <AnimatePresence>
-        {isLoading ? (
-          <Loading key="loading" />
-        ) : (
-          <motion.section
-            key="content"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.75, delay: 0.5 }}
-          >
-            <div className={`${styles.paddingX} ${styles.flexCenter}`}>
-              <div className={`${styles.boxWidth}`}>
-                <Navbar />
-              </div>
-            </div>
-
-            <div className={`bg-primary ${styles.flexStart} pt-[80px]`}>
-              <div className={`${styles.boxWidth}`}>
-                <Hero />
-              </div>
-            </div>
-
-            <div
-              className={`bg-primary ${styles.flexCenter} ${styles.paddingX}`}
-            >
-              <div className={`${styles.boxWidth}`}>
-                <SkillsAndExperience />
-                <Education />
-              </div>
-            </div>
-            <div
-              className={`bg-primary ${styles.flexCenter} ${styles.paddingX}`}
-            >
-              <div className={`${styles.boxWidth}`}>
-                <Projects />
-                <ExtraCurricular />
-              </div>
-            </div>
-            <Footer />
-          </motion.section>
-        )}
-      </AnimatePresence>
+    <div className="relative min-h-screen bg-void text-ink">
+      <Suspense fallback={null}>
+        <CloudScene onStats={onStats} />
+      </Suspense>
+      <div className="grain" aria-hidden="true" />
+      <Navbar />
+      <main className="relative z-10 mx-auto max-w-[1280px] px-5 sm:px-10 lg:px-20 xl:px-0">
+        <Hero stats={stats} />
+        <Trajectory />
+        <Reconstruct />
+        <Toolkit />
+        <Foundations />
+        <Connect stats={stats} />
+      </main>
     </div>
   );
-};
-
-export default App;
+}
