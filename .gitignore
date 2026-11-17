@@ -7,3 +7,4 @@ dist
 tools/out
 .chrome-tmp
 .preview.log
+.ci-check
