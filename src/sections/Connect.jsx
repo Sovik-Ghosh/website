@@ -1,7 +1,7 @@
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import { SiMedium } from "react-icons/si";
 import { profile } from "../content";
-import { profilePic } from "../assets";
+import profilePic from "../assets/profile-pic.jpg";
 import { Mono, Reveal } from "../ui";
 
 export default function Connect({ stats }) {
