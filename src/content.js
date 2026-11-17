@@ -7,7 +7,7 @@ export const profile = {
   location: "London, UK",
   rotating: ["real-time perception", "3D reconstruction", "GPU inference", "edge deployment"],
   intro:
-    "I build computer vision systems that run in real time — from multi-view geometry to hand-tuned CUDA kernels and TensorRT inference on NVIDIA hardware. Next: vision-language-action models on edge devices.",
+    "I build computer vision systems that run in real time, from multi-view geometry to hand-tuned CUDA kernels and TensorRT inference on NVIDIA hardware. Next: vision-language-action models on edge devices.",
   email: "gsovik.official@gmail.com",
   linkedin: "https://www.linkedin.com/in/sovik-ghosh-5b2236136/",
   github: "https://github.com/Sovik-Ghosh",
@@ -31,7 +31,7 @@ export const now = [
   {
     kicker: "CUDA",
     title: "Kernel lab",
-    body: "GEMM and memory kernels benchmarked against measured RTX 5060 Ti limits — 23.2 TFLOP/s FP32, 333 GB/s.",
+    body: "GEMM and memory kernels benchmarked against measured RTX 5060 Ti limits, 23.2 TFLOP/s FP32, 333 GB/s.",
   },
   {
     kicker: "3D",
@@ -41,7 +41,7 @@ export const now = [
   {
     kicker: "DATA",
     title: "Low-light detection",
-    body: "Data-centric label fixes for a fixed YOLO detector on ExDark — 3LC Kaggle challenge.",
+    body: "Data-centric label fixes for a fixed YOLO detector on ExDark, 3LC Kaggle challenge.",
   },
   {
     kicker: "NEXT",
@@ -58,9 +58,10 @@ export const experience = [
     org: "VivaCity",
     meta: "London · Hybrid · Full-time",
     body: [
-      "Computer vision for VivaCity's AI transport sensors, which count and classify road users across UK cities.",
+      "Computer vision for VivaCity's AI transport sensors, which detect, classify and track road users across UK cities.",
+      "Working on road-safety analytics: near-miss detection between road users and yielding behaviour at junctions and crossings, turning sensor trajectories into safety insight for city transport teams.",
     ],
-    tags: ["Computer Vision", "Edge AI", "Smart Cities"],
+    tags: ["Computer Vision", "Road Safety", "Near-miss Detection", "Yielding Analysis", "Edge AI"],
   },
   {
     date: "Jun 2025 — Aug 2026",
@@ -68,7 +69,7 @@ export const experience = [
     org: "Birmingham City University × COBA Plastics Group",
     meta: "On-site · Full-time",
     body: [
-      "Led a £200K Innovate UK-funded Knowledge Transfer Partnership transforming quality control and inspection in plastics manufacturing — bridging academic research and the factory floor.",
+      "Led a £200K Innovate UK-funded Knowledge Transfer Partnership transforming quality control and inspection in plastics manufacturing, bridging academic research and the factory floor.",
       "Built a real-time line-scan inspection system: a two-stream detect-then-segment network served by a TensorRT C++ runtime on NVIDIA Jetson.",
       "Shipped a DeepStream segmentation pipeline on Jetson.",
     ],
@@ -80,7 +81,7 @@ export const experience = [
     org: "POMO Robotics",
     meta: "Glasgow · Hybrid · Part-time",
     body: [
-      "Structure-from-Motion on AWS (Airflow, Spark, SuperGlue, COLMAP) over 250 GB+ of imagery — 1.5 cm RMSE, £3K/month saved.",
+      "Structure-from-Motion on AWS (Airflow, Spark, SuperGlue, COLMAP) over 250 GB+ of imagery, 1.5 cm RMSE, £3K/month saved.",
       "BEVFusion + PointPillars via TensorRT INT8 on DRIVE Orin: 90% vehicle detection at 40 ms, 60% less memory.",
       "YOLOv8 + EKF sensor fusion in DriveWorks: 70% fewer false positives at 30 FPS on the production fleet.",
     ],
