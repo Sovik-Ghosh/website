@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { motion as m, useScroll, useSpring } from "framer-motion";
 import { HiOutlineMenuAlt4, HiX } from "react-icons/hi";
 import { profile, sections } from "../content";
+import logoMark from "../assets/logo-mark.svg";
 
 export default function Navbar() {
   const [active, setActive] = useState("home");
@@ -31,8 +32,12 @@ export default function Navbar() {
       <m.div style={{ scaleX: progress }} className="fixed left-0 right-0 top-0 z-50 h-[2px] origin-left bg-gradient-to-r from-lime to-cyan" />
       <header className="fixed inset-x-0 top-0 z-40 px-5 sm:px-10 lg:px-20 pt-5">
         <nav className="mx-auto flex max-w-[1280px] items-center justify-between">
-          <button onClick={() => go("home")} className="font-mono text-lg text-lime" aria-label="Back to top">
-            SG/
+          <button onClick={() => go("home")} className="group" aria-label="Sovik Ghosh, back to top">
+            <img
+              src={logoMark}
+              alt="Sovik Ghosh"
+              className="h-12 sm:h-14 w-auto transition-[filter,transform] duration-300 group-hover:scale-[1.04] group-hover:drop-shadow-[0_0_14px_rgba(118,185,0,0.55)]"
+            />
           </button>
 
           <ul className="glass hidden md:flex items-center gap-1 rounded-full px-2 py-1.5">
